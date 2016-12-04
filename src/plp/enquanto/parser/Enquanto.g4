@@ -19,6 +19,8 @@ expressao: INT                                      # inteiro
          | expressao '*' expressao                  # opBin
          | expressao '+' expressao                  # opBin
          | expressao '-' expressao                  # opBin
+         | expressao '/' expressao                  # opBin
+         | expressao '^' expressao                  # opBin
          | '(' expressao ')'                        # expPar
          ;
 
@@ -27,6 +29,8 @@ bool: ('verdadeiro'|'falso')                        # booleano
     | expressao '<=' expressao                      # opRel
     | 'nao' bool                                    # naoLogico
     | bool 'e' bool                                 # eLogico
+    | bool 'ou' bool                                # ouLogico
+    | bool 'xor' bool                               # xorLogico
     | '(' bool ')'                                  # boolPar
     ;
 
