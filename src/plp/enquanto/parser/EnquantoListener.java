@@ -163,6 +163,28 @@ public interface EnquantoListener extends ParseTreeListener {
 	void exitELogico(@NotNull EnquantoParser.ELogicoContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link EnquantoParser#ouLogico}.
+	 * @param ctx the parse tree
+	 */
+	void enterOuLogico(@NotNull EnquantoParser.OuLogicoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EnquantoParser#ouLogico}.
+	 * @param ctx the parse tree
+	 */
+	void exitOuLogico(@NotNull EnquantoParser.OuLogicoContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link EnquantoParser#xorLogico}.
+	 * @param ctx the parse tree
+	 */
+	void enterXorLogico(@NotNull EnquantoParser.XorLogicoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EnquantoParser#xorLogico}.
+	 * @param ctx the parse tree
+	 */
+	void exitXorLogico(@NotNull EnquantoParser.XorLogicoContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link EnquantoParser#boolPar}.
 	 * @param ctx the parse tree
 	 */

@@ -15,18 +15,18 @@ public class EnquantoParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__23=1, T__22=2, T__21=3, T__20=4, T__19=5, T__18=6, T__17=7, T__16=8, 
-		T__15=9, T__14=10, T__13=11, T__12=12, T__11=13, T__10=14, T__9=15, T__8=16, 
-		T__7=17, T__6=18, T__5=19, T__4=20, T__3=21, T__2=22, T__1=23, T__0=24, 
+		T__23=1, T__22=2, T__21=3, T__20=4, T__19=5, T__18=6, T__17=7, T__16=8,
+		T__15=9, T__14=10, T__13=11, T__12=12, T__11=13, T__10=14, T__9=15, T__8=16,
+		T__7=17, T__6=18, T__5=19, T__4=20, T__3=21, T__2=22, T__1=23, T__0=24,
 		INT=25, ID=26, Texto=27, Espaco=28;
 	public static final String[] tokenNames = {
-		"<INVALID>", "'enquanto'", "')'", "'verdadeiro'", "'nao'", "'faca'", "'+'", 
-		"'*'", "'-'", "'entao'", "'('", "'senao'", "'='", "';'", "'<='", "'e'", 
-		"'leia'", "'{'", "'se'", "':='", "'exiba'", "'skip'", "'}'", "'escreva'", 
+		"<INVALID>", "'enquanto'", "')'", "'verdadeiro'", "'nao'", "'faca'", "'+'",
+		"'*'", "'-'", "'entao'", "'('", "'senao'", "'='", "';'", "'<='", "'e'",
+		"'leia'", "'{'", "'se'", "':='", "'exiba'", "'skip'", "'}'", "'escreva'",
 		"'falso'", "INT", "ID", "Texto", "Espaco"
 	};
 	public static final int
-		RULE_programa = 0, RULE_seqComando = 1, RULE_comando = 2, RULE_expressao = 3, 
+		RULE_programa = 0, RULE_seqComando = 1, RULE_comando = 2, RULE_expressao = 3,
 		RULE_bool = 4;
 	public static final String[] ruleNames = {
 		"programa", "seqComando", "comando", "expressao", "bool"
@@ -147,7 +147,7 @@ public class EnquantoParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comando; }
-	 
+
 		public ComandoContext() { }
 		public void copyFrom(ComandoContext ctx) {
 			super.copyFrom(ctx);
@@ -349,7 +349,7 @@ public class EnquantoParser extends Parser {
 			this._p = _p;
 		}
 		@Override public int getRuleIndex() { return RULE_expressao; }
-	 
+
 		public ExpressaoContext() { }
 		public void copyFrom(ExpressaoContext ctx) {
 			super.copyFrom(ctx);
@@ -518,7 +518,7 @@ public class EnquantoParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(69);
 				_errHandler.sync(this);
@@ -545,7 +545,7 @@ public class EnquantoParser extends Parser {
 			this._p = _p;
 		}
 		@Override public int getRuleIndex() { return RULE_bool; }
-	 
+
 		public BoolContext() { }
 		public void copyFrom(BoolContext ctx) {
 			super.copyFrom(ctx);
@@ -592,6 +592,40 @@ public class EnquantoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitELogico(this);
+		}
+	}
+	public static class OuLogicoContext extends BoolContext {
+		public List<BoolContext> bool() {
+			return getRuleContexts(BoolContext.class);
+		}
+		public BoolContext bool(int i) {
+			return getRuleContext(BoolContext.class,i);
+		}
+		public OuLogicoContext(BoolContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterOuLogico(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitOuLogico(this);
+		}
+	}
+	public static class XorLogicoContext extends BoolContext {
+		public List<BoolContext> bool() {
+			return getRuleContexts(BoolContext.class);
+		}
+		public BoolContext bool(int i) {
+			return getRuleContext(BoolContext.class,i);
+		}
+		public XorLogicoContext(BoolContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).enterXorLogico(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof EnquantoListener ) ((EnquantoListener)listener).exitXorLogico(this);
 		}
 	}
 	public static class NaoLogicoContext extends BoolContext {
@@ -715,7 +749,7 @@ public class EnquantoParser extends Parser {
 					setState(89); match(15);
 					setState(90); bool(3);
 					}
-					} 
+					}
 				}
 				setState(95);
 				_errHandler.sync(this);

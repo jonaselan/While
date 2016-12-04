@@ -313,4 +313,35 @@ public interface Linguagem {
 			return esq.getValor() && dir.getValor();
 		}
 	}
+
+	public class OuLogico implements Bool {
+		private Bool esq;
+		private Bool dir;
+
+		public OuLogico(Bool esq, Bool dir) {
+			this.esq = esq;
+			this.dir = dir;
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() || dir.getValor();
+		}
+	}
+
+	public class XorLogico implements Bool {
+		private Bool esq;
+		private Bool dir;
+
+		public OuLogico(Bool esq, Bool dir) {
+			this.esq = esq;
+			this.dir = dir;
+		}
+
+		@Override
+		public boolean getValor() {
+			return  (( esq.getValor() || dir.getValor() ) && !( esq.getValor() && dir.getValor() )) 
+		}
+	}
+
 }

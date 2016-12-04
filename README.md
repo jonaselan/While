@@ -1,6 +1,17 @@
 While
 =====
 
+## Anotações
+=====
+Principal -> MeuListiner (Programa) -> EnquantoListener
+
+parser/EnquantoBaseListener: interface para EnquantoListener
+parser/EnquantoListener: interface para EnquantoParser
+parser/EnquantoParser: ?
+parser/EnquantoLexer: ?
+linguagem/Linguagem: Logica de cada operador
+
+
 Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagens de Programação
 
 
@@ -9,8 +20,8 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 ### Altere a linguagem para incluir:
 1. ~~A expressão de divisão de inteiros (`/`)~~
 2. ~~A expressão de exponenciação de inteiros (`^`)~~
-3. A expressão `ou` entre booleanos
-4. A expressão `xor` entre booleanos
+3. ~~A expressão `ou` entre booleanos~~
+4. ~~A expressão `xor` entre booleanos~~
 5. A relação maior ou igual (`>=`)
 6. A relação diferente (`<>`)
 5. O comando `para ID de expressao ate expressao faca comando`. Exemplo
