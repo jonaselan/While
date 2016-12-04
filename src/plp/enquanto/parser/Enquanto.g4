@@ -8,6 +8,7 @@ comando: ID ':=' expressao                          # atribuicao
        | 'skip'                                     # skip
        | 'se' bool 'entao' comando 'senao' comando  # se
        | 'enquanto' bool 'faca' comando             # enquanto
+       | 'para' ID 'de' expressao 'ate' expressao 'faca' comando      # para
        | 'exiba' Texto                              # exiba
        | 'escreva' expressao                        # escreva
        | '{' seqComando '}'                         # bloco

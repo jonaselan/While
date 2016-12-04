@@ -100,6 +100,27 @@ public interface Linguagem {
 		}
 	}
 
+	class Para implements Comando {
+		private Expressa var;
+		private Bool condicao;
+		private Expressao incremento;
+		private Comando faca;
+
+		public Para(Expressa var, Bool condicao, Expressa incremento, Comando faca) {
+			this.var = var;
+			this.de = condicao;
+			this.ate = incremento;
+			this.faca = faca;
+		}
+
+		@Override
+		public void execute() {
+			for (var.getValor(); de.getValor(); ate.getValor()) {
+				faca.execute();
+			}
+		}
+	}
+
 	class Exiba implements Comando {
 		public Exiba(String texto) {
 			this.texto = texto;
