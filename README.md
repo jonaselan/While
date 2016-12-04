@@ -2,14 +2,13 @@ While
 =====
 
 ## Anotações
-=====
-Principal -> MeuListiner (Programa) -> EnquantoListener
+**Principal -> MeuListiner (Programa) -> EnquantoListener**
 
-parser/EnquantoBaseListener: interface para EnquantoListener
-parser/EnquantoListener: interface para EnquantoParser
-parser/EnquantoParser: ?
-parser/EnquantoLexer: ?
-linguagem/Linguagem: Logica de cada operador
+* parser/EnquantoBaseListener: interface para EnquantoListener
+* parser/EnquantoListener: interface para EnquantoParser
+* parser/EnquantoParser: ?
+* parser/EnquantoLexer: ?
+* linguagem/Linguagem: Logica de cada operador
 
 
 Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagens de Programação
