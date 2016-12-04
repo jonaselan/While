@@ -21,8 +21,8 @@ Linguagem "Enquanto" usada como exemplo na disciplina de Paradigmas de Linguagen
 2. ~~A expressão de exponenciação de inteiros (`^`)~~
 3. ~~A expressão `ou` entre booleanos~~
 4. ~~A expressão `xor` entre booleanos~~
-5. A relação maior ou igual (`>=`)
-6. A relação diferente (`<>`)
+5. ~~A relação maior ou igual (`>=`)~~
+6. ~~A relação diferente (`<>`)~~
 5. O comando `para ID de expressao ate expressao faca comando`. Exemplo
 <pre>
     para i de 1 ate 5 faca

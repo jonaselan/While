@@ -286,6 +286,28 @@ public interface Linguagem {
 		}
 	}
 
+	public class ExpMaiorIgual extends ExpRel {
+		public ExpMaiorIgual(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() >= dir.getValor();
+		}
+	}
+
+	public class ExpDif extends ExpRel {
+		public ExpDifIgual(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() <> dir.getValor();
+		}
+	}
+
 	public class NaoLogico implements Bool {
 		private Bool b;
 
@@ -340,7 +362,7 @@ public interface Linguagem {
 
 		@Override
 		public boolean getValor() {
-			return  (( esq.getValor() || dir.getValor() ) && !( esq.getValor() && dir.getValor() )) 
+			return  (( esq.getValor() || dir.getValor() ) && !( esq.getValor() && dir.getValor() ))
 		}
 	}
 
