@@ -101,21 +101,21 @@ public interface Linguagem {
 	}
 
 	class Para implements Comando {
-		private Expressa var;
+		private Expressao var;
 		private Bool condicao;
 		private Expressao incremento;
 		private Comando faca;
 
-		public Para(Expressa var, Bool condicao, Expressa incremento, Comando faca) {
+		public Para(Expressa var, Bool condicao, Expressao incremento, Comando faca) {
 			this.var = var;
-			this.de = condicao;
+			this.condicao = condicao;
 			this.ate = incremento;
 			this.faca = faca;
 		}
 
 		@Override
 		public void execute() {
-			for (var.getValor(); de.getValor(); ate.getValor()) {
+			for (var.getValor(); condicao.getValor(); ate.getValor()) {
 				faca.execute();
 			}
 		}
@@ -304,6 +304,17 @@ public interface Linguagem {
 		@Override
 		public boolean getValor() {
 			return esq.getValor() <= dir.getValor();
+		}
+	}
+
+	public class ExpResto extends ExpRel {
+		public ExpResto(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public boolean getValor() {
+			return esq.getValor() % dir.getValor();
 		}
 	}
 

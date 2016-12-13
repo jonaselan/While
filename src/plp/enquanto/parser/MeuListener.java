@@ -120,6 +120,9 @@ public class MeuListener extends EnquantoBaseListener {
 		case "^":
 			exp = new ExpPot(esq, dir);
 			break;
+		case "%":
+			exp = new ExpResto(esq, dir);
+			break;
 		default:
 			exp = new ExpSoma(esq, dir);
 		}

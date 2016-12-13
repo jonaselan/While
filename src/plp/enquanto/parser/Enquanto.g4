@@ -8,7 +8,7 @@ comando: ID ':=' expressao                          # atribuicao
        | 'skip'                                     # skip
        | 'se' bool 'entao' comando 'senao' comando  # se
        | 'enquanto' bool 'faca' comando             # enquanto
-       | 'para' ID 'de' expressao 'ate' expressao 'faca' comando      # para
+       | 'para' expressao 'de' expressao 'ate' expressao 'faca' comando      # para
        | 'exiba' Texto                              # exiba
        | 'escreva' expressao                        # escreva
        | '{' seqComando '}'                         # bloco
@@ -17,11 +17,10 @@ comando: ID ':=' expressao                          # atribuicao
 expressao: INT                                      # inteiro
          | 'leia'                                   # leia
          | ID                                       # id
-         | expressao '*' expressao                  # opBin
-         | expressao '+' expressao                  # opBin
-         | expressao '-' expressao                  # opBin
-         | expressao '/' expressao                  # opBin
          | expressao '^' expressao                  # opBin
+         | expressao '%' expressao                  # opBin
+         | expressao ('*' | '/') expressao          # opBin
+         | expressao ('+' | '-') expressao          # opBin
          | '(' expressao ')'                        # expPar
          ;
 
