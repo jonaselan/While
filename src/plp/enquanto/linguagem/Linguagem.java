@@ -46,11 +46,15 @@ public interface Linguagem {
 	class Se implements Comando {
 		private Bool condicao;
 		private Comando entao;
+		private Bool condicao2;
+		private Comando entao2;
 		private Comando senao;
 
-		public Se(Bool condicao, Comando entao, Comando senao) {
+		public Se(Bool condicao, Comando entao, Bool condicao2, Comando entao2, Comando senao) {
 			this.condicao = condicao;
 			this.entao = entao;
+			this.condicao2 = condicao2;
+			this.entao = entao2;
 			this.senao = senao;
 		}
 
@@ -58,6 +62,8 @@ public interface Linguagem {
 		public void execute() {
 			if (condicao.getValor())
 				entao.execute();
+			else if(condicao2.getValor())
+				entao2.execute();
 			else
 				senao.execute();
 		}

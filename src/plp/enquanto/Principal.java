@@ -39,9 +39,11 @@ public class Principal {
 				new Atribuicao("x", new Inteiro(10)),                       // x := 10
 				new Atribuicao("y", leia),                                  // y := leia
 				new Atribuicao("c", new ExpSoma(new Id("x"), new Id("y"))), // c := x + y
-				new Se(new ExpMenorIgual(new Inteiro(30), new Id("c")),     // se 30 <= c entao
-						new Escreva(new Id("c")),                           		// escreva c
-						new Exiba("menor"))                                 		// senao exiba "menor"
+				new Se(new ExpMenorIgual(new Inteiro(30), new Id("c")),     // se 30 =< c entao
+						new Exiba("maior"),                         			  		// escreva "maior"
+						new ExpMaiorIgual(new Inteiro(30), new Id("c")),				// senaose 30 >= c
+						new Exiba("menor"),																			// escreva "menor"
+						new Exiba("igual"))                                 		// senao exiba "outro"
 				));
 		p2.execute();
 
