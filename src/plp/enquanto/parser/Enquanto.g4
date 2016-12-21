@@ -18,7 +18,6 @@ expressao: INT                                      # inteiro
          | 'leia'                                   # leia
          | ID                                       # id
          | expressao '^' expressao                  # opBin
-         | expressao '%' expressao                  # opBin
          | expressao ('*' | '/') expressao          # opBin
          | expressao ('+' | '-') expressao          # opBin
          | '(' expressao ')'                        # expPar

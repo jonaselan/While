@@ -42,8 +42,10 @@ public class MeuListener extends EnquantoBaseListener {
 	public void exitSe(@NotNull EnquantoParser.SeContext ctx) {
 		Bool condicao = (Bool) getValue(ctx.bool());
 		Comando entao = (Comando) getValue(ctx.comando(0));
-		Comando senao = (Comando) getValue(ctx.comando(1));
-		setValue(ctx, new Se(condicao, entao, senao));
+		Bool condicao2 = (Bool) getValue(ctx.bool());
+		Comando entao2 = (Comando) getValue(ctx.comando(3));
+		Comando senao = (Comando) getValue(ctx.comando(4));
+		setValue(ctx, new Se(condicao, entao, condicao2, entao2, senao));
 	}
 
 	@Override
@@ -120,9 +122,6 @@ public class MeuListener extends EnquantoBaseListener {
 		case "^":
 			exp = new ExpPot(esq, dir);
 			break;
-		case "%":
-			exp = new ExpResto(esq, dir);
-			break;
 		default:
 			exp = new ExpSoma(esq, dir);
 		}
@@ -195,9 +194,6 @@ public class MeuListener extends EnquantoBaseListener {
 			break;
 		case ">=":
 			exp = new ExpMaiorIgual(esq, dir);
-			break;
-		case "<>":
-			exp = new ExpDif(esq, dir);
 			break;
 		default:
 			exp = new ExpIgual(esq, dir);

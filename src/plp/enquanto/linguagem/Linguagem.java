@@ -112,16 +112,16 @@ public interface Linguagem {
 		private Expressao incremento;
 		private Comando faca;
 
-		public Para(Expressa var, Bool condicao, Expressao incremento, Comando faca) {
+		public Para(Expressao var, Bool condicao, Expressao incremento, Comando faca) {
 			this.var = var;
 			this.condicao = condicao;
-			this.ate = incremento;
+			this.incremento = incremento;
 			this.faca = faca;
 		}
 
 		@Override
 		public void execute() {
-			for (var.getValor(); condicao.getValor(); ate.getValor()) {
+			for (var.getValor(); condicao.getValor(); incremento.getValor()) {
 				faca.execute();
 			}
 		}
@@ -262,7 +262,7 @@ public interface Linguagem {
 
 		@Override
 		public int getValor() {
-			return esq.getValor() ^ dir.getValor();
+			return (int) Math.pow(esq.getValor(), dir.getValor());
 		}
 	}
 
@@ -313,17 +313,6 @@ public interface Linguagem {
 		}
 	}
 
-	public class ExpResto extends ExpRel {
-		public ExpResto(Expressao esq, Expressao dir) {
-			super(esq, dir);
-		}
-
-		@Override
-		public boolean getValor() {
-			return esq.getValor() % dir.getValor();
-		}
-	}
-
 	public class ExpMaiorIgual extends ExpRel {
 		public ExpMaiorIgual(Expressao esq, Expressao dir) {
 			super(esq, dir);
@@ -335,14 +324,14 @@ public interface Linguagem {
 		}
 	}
 
-	public class ExpDif extends ExpRel {
+	public class ExpDifIgual extends ExpRel {
 		public ExpDifIgual(Expressao esq, Expressao dir) {
 			super(esq, dir);
 		}
 
 		@Override
 		public boolean getValor() {
-			return esq.getValor() <> dir.getValor();
+			return esq.getValor() != dir.getValor();
 		}
 	}
 
@@ -393,14 +382,15 @@ public interface Linguagem {
 		private Bool esq;
 		private Bool dir;
 
-		public OuLogico(Bool esq, Bool dir) {
+		public XorLogico(Bool esq, Bool dir) {
 			this.esq = esq;
 			this.dir = dir;
 		}
 
 		@Override
 		public boolean getValor() {
-			return  (( esq.getValor() || dir.getValor() ) && !( esq.getValor() && dir.getValor() ))
+			return esq.getValor() ^ dir.getValor();
+//			return  (( esq.getValor() || dir.getValor() ) && !( esq.getValor() && dir.getValor() ));
 		}
 	}
 

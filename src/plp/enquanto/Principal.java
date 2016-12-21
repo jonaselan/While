@@ -56,29 +56,29 @@ public class Principal {
 		//   y := Leia;
 		// };
 		// exiba "Acertou"
-		Programa p3 = new Programa(asList(
-			new Atribuicao(new ID("x"), new Inteiro(5)),
-			new Exiba("Qual a senha?"),
-			new Atribuicao(new ID("y"), new Leia()),
-			new Enquanto(new NaoLogio(new ExpIgual(new ID("x"), new ID("y"))),
-			             new Bloco(asList(
-			               new Exiba("Qual a senha?"),
-			               new Atribuicao(new ID("y"), new Leia())
-			             )),
-			new Exiba("Acertou")
-		));
-		p3.execute();
+//		Programa p3 = new Programa(asList(
+//			new Atribuicao(new ID("x"), new Inteiro(5)),
+//			new Exiba("Qual a senha?"),
+//			new Atribuicao(new ID("y"), new Leia()),
+//			new Enquanto(new NaoLogio(new ExpIgual(new ID("x"), new ID("y"))),
+//			             new Bloco(asList(
+//			               new Exiba("Qual a senha?"),
+//			               new Atribuicao(new ID("y"), new Leia())
+//			             )),
+//			new Exiba("Acertou")
+//		));
+//		p3.execute();
 
 		// PARA
 		// i = 0
 		// for (i; i <= 5 ; i++) System.out.println(i);
-		Programa p4 = new Programa(asList(
-				new Atribuicao("i", new Inteiro(0)),                      // i := 0
-				new Para(new Id("i"),																			// i
-								new ExpMenorIgual(new Inteiro(5), new Id("i")),   // i <= 5
-								new ExpSoma(new Id("i"), new Inteiro(1)),					// i++
-								new Exiba(new Id("i")))      											// System.out.println(i)
-				));
-		p4.execute();
+//		Programa p4 = new Programa(asList(
+//				new Atribuicao("i", new Inteiro(0)),                      // i := 0
+//				new Para(new Id("i"),																			// i
+//								new ExpMenorIgual(new Inteiro(5), new Id("i")),   // i <= 5
+//								new ExpSoma(new Id("i"), new Inteiro(1)),					// i++
+//								new Exiba(new Id("i")))      											// System.out.println(i)
+//				));
+//		p4.execute();
 	}
 }
